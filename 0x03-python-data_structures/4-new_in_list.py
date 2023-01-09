@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+# 4-new_in_list.py
+
 
 def new_in_list(my_list, idx, element):
-    list_copy = my_list.copy
-    if idx >= 0 and idx < len(my_list):
-        list_copy[idx] = element
-    return list_copy
+    """Replace an element in a copied list at a specific position."""
+    if idx < 0 or idx > (len(my_list) - 1):
+        return (my_list)
+
+    copy = [d for d in my_list]
+    copy[idx] = element
+    return (copy)
