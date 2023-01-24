@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 3-square.py
-#Aaron0Chillz
+# Aaron0Chillz
 """Define a class Square."""
 
 
