@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # This boy so acey
 
-
-
 """Defines a JSON-to-object function."""
 import json
 
