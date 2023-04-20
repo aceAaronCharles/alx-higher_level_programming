@@ -15,7 +15,7 @@ if __name__ == "__main__":
                                 order_by=City.id, back_populates="state")
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost:3306/{}'
-            .format(argv[1],argv[2],argv[3]))
+            .format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
     query = session.query(State, City).filter(City.state_id ==
