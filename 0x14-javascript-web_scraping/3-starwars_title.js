@@ -18,6 +18,6 @@ request.get(url, (error, response, body) => {
     console.error(`Failed to retrieve movie with ID: ${movieId}`);
   } else {
     const movieData = JSON.parse(body);
-    console.log(`The title of Episode ${movieId} is: ${movieData.title}`);
+    console.log(`${movieData.title}`);
   }
 });
