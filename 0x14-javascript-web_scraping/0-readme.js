@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//Script that reads and prints the content of a fileconst fs = require('fs');
 
 const fs = require('fs');
 
