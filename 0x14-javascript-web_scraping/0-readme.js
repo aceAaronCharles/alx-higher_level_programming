@@ -1,14 +1,10 @@
 #!/usr/bin/node
 
+const myArg = process.argv.slice(2);
 const fs = require('fs');
 
-const filePath = process.argv[2];
+fs.readFile(myArg[0], (err, data) => {
+  if (err) throw err;
 
-try {
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const jsonData = JSON.parse(content);
-  console.log(jsonData);
-} catch (error) {
-  console.log(`Error occurred while reading the file: ${error}`);
-}
-
+  console.log(data.toString());
+});
