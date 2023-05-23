@@ -1,7 +1,8 @@
 #!/usr/bin/node
-// Writes a string to a file.
-conts fs = require('fs');
-fs.writeFile(process,argv[2], process.argv[3], err => {
-  if (err) console.log(err);
-});
 
+const myArgs = process.argv.slice(2);
+const fs = require('fs');
+
+fs.writeFile(myArgs[0], myArgs[1], (err) => {
+  if (err) throw err;
+});
