@@ -1,25 +1,12 @@
 #!/usr/bin/node
-
 const request = require('request');
-
-const apiUrl = process.argv[2];
-const characterId = 18;
-
-if (!apiUrl) {
-  console.log('https://swapi-api.alx-tools.com/api/films/');
-  process.exit(1);
-}
-
-const url = `${apiUrl}${characterId}`;
-
-request.get(url, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error(`Failed to retrieve character with ID: ${characterId}`);
-  } else {
-    const characterData = JSON.parse(body);
-    const movieCount = characterData.films.length;
-    console.log(`${movieCount}`);
+request(process.argv[2], function (error, response, body) {
+  if (!error) {
+    const results = JSON.parse(body).results;
+    console.log(results.reduce((count, movie) => {
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        ? count + 1
+        : count;
+    }, 0));
   }
 });
